@@ -138,20 +138,6 @@ resource "aws_instance" "instance1" {
   key_name               = aws_key_pair.mykey.key_name
 
   tags = var.instance_tags
-  
-  connection { 
-   type = "ssh" 
-   user = "ec2-user" 
-   private_key = file("${path.module}/mykey.pem")
-   host = self.public_ip 
-  }
-
-  provisioner "remote-exec" {
-    inline = [ 
-      "sudo yum install httpd -y",
-      "sudo systemctl enable --now httpd"
-     ]
-  }
 }
 
 
