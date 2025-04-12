@@ -9,12 +9,12 @@ variable "aws_region" {
 variable "access_key" {
   description = "Define Your Account Access Key"
   type        = string
-  #sensitive = true
+  sensitive = true
 }
 variable "secret_key" {
   description = "Define Your Account Secret Key"
   type        = string
-  #sensitive = true 
+  sensitive = true 
 }
 
 # VPC and Subnets
